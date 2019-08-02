@@ -1,1 +1,2 @@
-[sites.google.com/view/contador-de-marcacoes/p%C3%A1gina-inicial](https://sites.google.com/view/contador-de-marcacoes/p%C3%A1gina-inicial)
+# LINK DO DEMO DO PROJETO
+[guilhermerodrigues680.github.io/contador-itens-marcados/](https://guilhermerodrigues680.github.io/contador-itens-marcados/)
