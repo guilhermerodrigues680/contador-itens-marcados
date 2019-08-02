@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Contador de Marcações</title>
+    <style>
+        fieldset {
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+        .row {
+            margin-bottom: 5px;
+            margin-top: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        [type=radio] {
+            margin-right: 10px;
+        }
+        #div-submit {
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+        #btn-modal {
+            display: none;
+        }
+        #div-resultado {
+            font-size: 24px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron text-center bg-warning">
+        <h1>Contador de Marcações</h1>
+        <p>Frase frase frase</p> 
+    </div>
+    <div class="container">
+        <form id="formulario">
+            <div class="row bg-light">
+                <fieldset>
+                    <legend class="font-weight-bold">1ª Questão:</legend>
+                    <p>Contexto contexto contexto contexto</p>
+                    <div class="form-check">
+                        <input type="radio" name="questao1" value="a">A<br>
+                        <input type="radio" name="questao1" value="b">B<br>
+                        <input type="radio" name="questao1" value="c">C<br>
+                        <input type="radio" name="questao1" value="d">D<br>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="row bg-light">
+                <fieldset>
+                    <legend class="font-weight-bold">2ª Questão:</legend>
+                    <p>Contexto contexto contexto contexto</p>
+                    <div class="form-check">
+                        <input type="radio" name="questao2" value="a">A<br>
+                        <input type="radio" name="questao2" value="b">B<br>
+                        <input type="radio" name="questao2" value="c">C<br>
+                        <input type="radio" name="questao2" value="d">D<br>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="row bg-light">
+                <fieldset>
+                    <legend class="font-weight-bold">3ª Questão:</legend>
+                    <p>Contexto contexto contexto contexto</p>
+                    <div class="form-check">
+                        <input type="radio" name="questao3" value="a">A<br>
+                        <input type="radio" name="questao3" value="b">B<br>
+                        <input type="radio" name="questao3" value="c">C<br>
+                        <input type="radio" name="questao3" value="d">D<br>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="row bg-light">
+                <fieldset>
+                    <legend class="font-weight-bold">4ª Questão:</legend>
+                    <p>Contexto contexto contexto contexto</p>
+                    <div class="form-check">
+                        <input type="radio" name="questao4" value="a">A<br>
+                        <input type="radio" name="questao4" value="b">B<br>
+                        <input type="radio" name="questao4" value="c">C<br>
+                        <input type="radio" name="questao4" value="d">D<br>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="row bg-light">
+                <fieldset>
+                    <legend class="font-weight-bold">5ª Questão:</legend>
+                    <p>Contexto contexto contexto contexto</p>
+                    <div class="form-check">
+                        <input type="radio" name="questao5" value="a">A<br>
+                        <input type="radio" name="questao5" value="b">B<br>
+                        <input type="radio" name="questao5" value="c">C<br>
+                        <input type="radio" name="questao5" value="d">D<br>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="row bg-light">
+                <fieldset>
+                    <legend class="font-weight-bold">6ª Questão:</legend>
+                    <p>Contexto contexto contexto contexto</p>
+                    <div class="form-check">
+                        <input type="radio" name="questao6" value="a">A<br>
+                        <input type="radio" name="questao6" value="b">B<br>
+                        <input type="radio" name="questao6" value="c">C<br>
+                        <input type="radio" name="questao6" value="d">D<br>
+                    </div>
+                </fieldset>
+            </div>
+            <div id="div-submit" class="row">
+                <input type="submit" value="Validar" class="btn btn-warning btn-lg btn-block" >
+            </div>
+        </form>
+    </div>
+
+    <div id="div-resultado" class="container bg-info text-white text-center font-weight-bold"></div>
+    <div id="div-alertas" class="container"></div>
+
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <p></p>
+    </div>
+
+    <!-- Button to Open the Modal -->
+    <button id="btn-modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"></button>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Resultado</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div id="retorno" class="modal-body">
+                    Modal body..
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Boostrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
